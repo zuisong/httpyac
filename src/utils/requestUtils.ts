@@ -1,8 +1,8 @@
-import { ContentType, HttpMethod, HttpRegion, HttpResponse, HttpResponseRequest, RequestLogger } from '../models';
-import { isString, toMultiLineString } from './stringUtils';
-import { parseMimeType } from './mimeTypeUtils';
+import { ContentType, HttpMethod, HttpRegion, HttpResponse, HttpResponseRequest, RequestLogger } from '../models/index.js';
+import { isString, toMultiLineString } from './stringUtils.js';
+import { parseMimeType } from './mimeTypeUtils.js';
 import { default as chalk } from 'chalk';
-import { log } from '../io';
+import { log } from '../io/index.js';
 
 
 export function isRequestMethod(method: string | undefined): method is HttpMethod {

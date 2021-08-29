@@ -1,7 +1,7 @@
-import { ProcessorContext, HttpRegionAction, ActionType } from '../models';
+import { ProcessorContext, HttpRegionAction, ActionType } from '../models/index.js';
 
-import * as utils from '../utils';
-import { testFactory } from './testMethod';
+import * as utils from '../utils/index.js';
+import { testFactory } from './testMethod.js';
 
 export interface ScriptData {
   script: string;

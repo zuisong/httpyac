@@ -1,4 +1,4 @@
-import { ProcessorContext, VariableType } from '../../models';
+import { ProcessorContext, VariableType } from '../../models/index.js';
 
 
 export async function hostVariableReplacer(text: string, type: VariableType | string, { variables }: ProcessorContext): Promise<string | undefined> {

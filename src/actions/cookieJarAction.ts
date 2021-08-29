@@ -1,6 +1,6 @@
-import { ActionType, HttpRegionAction, ProcessorContext } from '../models';
-import { cookieStore } from '../store';
-import { getHeader, isString } from '../utils';
+import { ActionType, HttpRegionAction, ProcessorContext } from '../models/index.js';
+import { cookieStore } from '../store/index.js';
+import { getHeader, isString } from '../utils/index.js';
 
 export class CookieJarAction implements HttpRegionAction {
   id = ActionType.cookieJar;

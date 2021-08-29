@@ -1,5 +1,5 @@
-import { HttpResponse, HttpResponseRequest } from '../models';
-import { isString, toMultiLineString } from './stringUtils';
+import { HttpResponse, HttpResponseRequest } from '../models/index.js';
+import { isString, toMultiLineString } from './stringUtils.js';
 
 export function toHttpString(response: HttpResponse) : string {
   const result: Array<string> = [];

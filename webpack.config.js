@@ -1,10 +1,10 @@
 'use strict';
-const fs = require('fs');
-const path = require('path');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+import fs from 'fs';
+import path from 'path';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 
-module.exports = (env, argv) => {
+export default (env, argv) => {
   /**@type {import('webpack').Configuration}*/
   const config = {
     target: 'node',
@@ -12,7 +12,7 @@ module.exports = (env, argv) => {
 
     entry: './src/index.ts',
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve('./dist'),
       filename: 'index.js',
       library: {
         type: 'commonjs2',
@@ -72,7 +72,7 @@ module.exports = (env, argv) => {
         },
       },
       eslint: {
-        files: ['./src/**/*.{ts,tsx,js,jsx}']
+        files: ['./src/**/*.{ts,tsx.jsx}']
       }
     }));
   }

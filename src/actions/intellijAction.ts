@@ -1,10 +1,10 @@
-import { ProcessorContext, ActionType, HttpRegionAction } from '../models';
-import { ScriptData } from './javascriptAction';
-import * as utils from '../utils';
-import { fileProvider, userInteractionProvider, log } from '../io';
+import { ProcessorContext, ActionType, HttpRegionAction } from '../models/index.js';
+import { ScriptData } from './javascriptAction.js';
+import * as utils from '../utils/index.js';
+import { fileProvider, userInteractionProvider, log } from '../io/index.js';
 
 
-import * as intellij from './intellij';
+import * as intellij from './intellij/index.js';
 
 export interface IntellijScriptData{
   fileName: string;

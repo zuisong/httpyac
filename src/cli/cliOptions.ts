@@ -1,5 +1,5 @@
 import arg from 'arg';
-import { RepeatOptions, RepeatOrder, LogLevel } from '../models';
+import { RepeatOptions, RepeatOrder, LogLevel } from '../models/index.js';
 
 export enum CliFilterOptions{
   onlyFailed = 'only-failed',

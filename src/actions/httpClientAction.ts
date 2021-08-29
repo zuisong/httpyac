@@ -1,7 +1,7 @@
-import { ActionType, ProcessorContext, HttpRequest, HttpRequestBodyLine, HttpRegionAction, HookCancel } from '../models';
-import { isString, isMimeTypeFormUrlEncoded } from '../utils';
+import { ActionType, ProcessorContext, HttpRequest, HttpRequestBodyLine, HttpRegionAction, HookCancel } from '../models/index.js';
+import { isString, isMimeTypeFormUrlEncoded } from '../utils/index.js';
 import encodeUrl from 'encodeurl';
-import { log } from '../io';
+import { log } from '../io/index.js';
 
 
 export class HttpClientAction implements HttpRegionAction {

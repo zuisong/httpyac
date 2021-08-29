@@ -1,11 +1,11 @@
-import { HttpClient, HttpClientContext, HttpRequest, HttpResponse, RepeatOrder, VariableProviderContext } from '../models';
-import { isString, isMimeTypeJSON, isMimeTypeXml, parseContentType } from '../utils';
+import { HttpClient, HttpClientContext, HttpRequest, HttpResponse, RepeatOrder, VariableProviderContext } from '../models/index.js';
+import { isString, isMimeTypeJSON, isMimeTypeXml, parseContentType } from '../utils/index.js';
 import { default as got, OptionsOfUnknownResponseBody, CancelError, Response } from 'got';
-import merge from 'lodash/merge';
-import { HttpProxyAgent } from 'http-proxy-agent';
-import { HttpsProxyAgent } from 'https-proxy-agent';
+import lodash from 'lodash';
+import HttpProxyAgent from 'http-proxy-agent';
+import HttpsProxyAgent from 'https-proxy-agent';
 import { default as filesize } from 'filesize';
-import { log } from './logger';
+import { log } from './logger.js';
 import xmlFormat from 'xml-formatter';
 
 export function gotHttpClientFactory(defaultsOverride: HttpRequest | undefined) : HttpClient {
@@ -26,7 +26,7 @@ export function gotHttpClientFactory(defaultsOverride: HttpRequest | undefined) 
       if (!url) {
         throw new Error('empty url');
       }
-      const mergedRequest: HttpRequest = merge({}, defaults,
+      const mergedRequest: HttpRequest = lodash.merge({}, defaults,
         defaultsOverride,
         request);
       delete mergedRequest.url;
@@ -110,8 +110,8 @@ async function load(url: string, options: OptionsOfUnknownResponseBody, context:
 function initProxy(request: HttpRequest) {
   if (request.proxy) {
     request.agent = {
-      http: new HttpProxyAgent(request.proxy),
-      https: new HttpsProxyAgent(request.proxy)
+      http: new HttpProxyAgent.HttpProxyAgent(request.proxy),
+      https: new HttpsProxyAgent.HttpsProxyAgent(request.proxy)
     };
     delete request.proxy;
   }

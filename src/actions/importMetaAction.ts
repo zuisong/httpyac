@@ -1,7 +1,7 @@
-import { executeGlobalScripts, toAbsoluteFilename } from '../utils';
-import { ActionType, HttpRegionAction, ProcessorContext, HttpFile } from '../models';
-import { HttpFileStore } from '../store';
-import { fileProvider } from '../io';
+import { executeGlobalScripts, toAbsoluteFilename } from '../utils/index.js';
+import { ActionType, HttpRegionAction, ProcessorContext, HttpFile } from '../models/index.js';
+import { HttpFileStore } from '../store/index.js';
+import { fileProvider } from '../io/index.js';
 
 
 export interface ImportProcessorContext extends ProcessorContext{

@@ -1,5 +1,5 @@
 import inquirer from 'inquirer';
-import { UserInteractonProvider } from '../models';
+import { UserInteractonProvider } from '../models/index.js';
 
 
 export const userInteractionProvider: UserInteractonProvider = {

@@ -1,7 +1,7 @@
-import { fileProvider, log } from '../../io';
-import { PathLike, VariableProviderContext, Variables } from '../../models';
+import { fileProvider, log } from '../../io/index.js';
+import { PathLike, VariableProviderContext, Variables } from '../../models/index.js';
 import { parse } from 'dotenv';
-import { expandVariables, toAbsoluteFilename } from '../../utils';
+import { expandVariables, toAbsoluteFilename } from '../../utils/index.js';
 
 const defaultFiles: Array<string> = ['.env'];
 

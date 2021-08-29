@@ -1,9 +1,9 @@
-import { ProcessorContext } from '../../models';
+import { ProcessorContext } from '../../models/index.js';
 import { CancelableRequest, OptionsOfUnknownResponseBody, Response } from 'got';
 import { createHash } from 'crypto';
 import { v4 as uuidv4 } from 'uuid';
 import { URL } from 'url';
-import { ParserRegex } from '../../parser';
+import { ParserRegex } from '../../parser/index.js';
 
 
 export async function digestAuthVariableReplacer(text: string, type: string, { request }: ProcessorContext): Promise<string | undefined> {

@@ -1,8 +1,8 @@
-import { HttpRegion, HttpRequest, HttpSymbol, HttpSymbolKind, getHttpLineGenerator, HttpRegionParserResult, ParserContext, HttpRegionAction } from '../models';
+import { HttpRegion, HttpRequest, HttpSymbol, HttpSymbolKind, getHttpLineGenerator, HttpRegionParserResult, ParserContext, HttpRegionAction } from '../models/index.js';
 
-import { isString, isStringEmpty, parseMimeType, isRequestMethod, getHeader } from '../utils';
-import * as actions from '../actions';
-import { ParserRegex } from './parserRegex';
+import { isString, isStringEmpty, parseMimeType, isRequestMethod, getHeader } from '../utils/index.js';
+import * as actions from '../actions/index.js';
+import { ParserRegex } from './parserRegex.js';
 
 type RequestLineParserMethod = (text: string, line: number, request: HttpRequest) => false | { symbols: HttpSymbol[], actions?: HttpRegionAction[] };
 

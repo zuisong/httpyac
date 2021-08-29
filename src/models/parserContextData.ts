@@ -1,6 +1,6 @@
-import { ScriptData } from '../actions';
-import { RequestBodyImport } from './httpRequest';
-import { HttpSymbol } from './httpSymbol';
+import { ScriptData } from '../actions/index.js';
+import { RequestBodyImport } from './httpRequest.js';
+import { HttpSymbol } from './httpSymbol.js';
 
 
 export interface ParserEveryRequestScript {

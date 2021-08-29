@@ -1,3 +1,3 @@
-import { HttpFileSendContext } from '../models';
+import { HttpFileSendContext } from '../models/index.js';
 
 export type CliContext = Omit<HttpFileSendContext, 'httpFile'>;

@@ -1,4 +1,4 @@
-import { ActionType, HttpRegionAction, ProcessorContext, VariableType, HookCancel } from '../models';
+import { ActionType, HttpRegionAction, ProcessorContext, VariableType, HookCancel } from '../models/index.js';
 
 
 export class VariableAction implements HttpRegionAction {

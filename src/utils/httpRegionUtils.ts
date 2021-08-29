@@ -1,5 +1,5 @@
-import * as models from '../models';
-import { cloneResponse } from './requestUtils';
+import * as models from '../models/index.js';
+import { cloneResponse } from './requestUtils.js';
 
 
 export function getDisplayName(httpRegion: models.HttpRegion, defaultName = 'global'): string {

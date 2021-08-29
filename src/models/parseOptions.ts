@@ -1,6 +1,6 @@
-import { PathLike } from './pathLike';
-import { HttpFileStore } from '../store';
-import { EnvironmentConfig } from './environmentConfig';
+import { PathLike } from './pathLike.js';
+import { HttpFileStore } from '../store/index.js';
+import { EnvironmentConfig } from './environmentConfig.js';
 
 
 export interface ParseOptions {

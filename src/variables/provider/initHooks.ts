@@ -1,9 +1,9 @@
-import { provideConfigVariables, provideConfigEnvironments } from './configVariableProvider';
-import { provideDotenvVariables, provideDotenvEnvironments } from './dotenvVariableProvider';
-import { httpFileVariableProvider } from './httpFileVariableProvider';
-import { provideIntellijVariables, provideIntellijEnvironments } from './intellijVariableProvider';
-import { provideIntellijGlobalVariables } from './intellijGlobalVariableProvider';
-import { ProvideVariablesHook, ProvideEnvironmentsHook } from '../../models';
+import { provideConfigVariables, provideConfigEnvironments } from './configVariableProvider.js';
+import { provideDotenvVariables, provideDotenvEnvironments } from './dotenvVariableProvider.js';
+import { httpFileVariableProvider } from './httpFileVariableProvider.js';
+import { provideIntellijVariables, provideIntellijEnvironments } from './intellijVariableProvider.js';
+import { provideIntellijGlobalVariables } from './intellijGlobalVariableProvider.js';
+import { ProvideVariablesHook, ProvideEnvironmentsHook } from '../../models/index.js';
 
 export enum VariableProviderType{
   config = 'config',

@@ -1,8 +1,8 @@
-import { PathLike } from './pathLike';
-import { HttpRegion } from './httpRegion';
-import { HttpFileHooks } from './httpFileHooks';
-import { Variables } from './variables';
-import { EnvironmentConfig } from './environmentConfig';
+import { PathLike } from './pathLike.js';
+import { HttpRegion } from './httpRegion.js';
+import { HttpFileHooks } from './httpFileHooks.js';
+import { Variables } from './variables.js';
+import { EnvironmentConfig } from './environmentConfig.js';
 
 export interface HttpFile{
   fileName: PathLike;

@@ -1,7 +1,7 @@
 import { Cookie, CookieJar, MemoryCookieStore } from 'tough-cookie';
-import { log } from '../io';
-import { HttpFile, PathLike } from '../models';
-import { toEnvironmentKey } from '../utils';
+import { log } from '../io/index.js';
+import { HttpFile, PathLike } from '../models/index.js';
+import { toEnvironmentKey } from '../utils/index.js';
 
 
 interface CookieStoreEntry{

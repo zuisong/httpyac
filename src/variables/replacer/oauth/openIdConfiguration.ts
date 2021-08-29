@@ -1,6 +1,6 @@
-import get from 'lodash/get';
-import { Variables } from '../../../models';
-import { log, userInteractionProvider } from '../../../io';
+import lodash from 'lodash';
+import { Variables } from '../../../models/index.js';
+import { log, userInteractionProvider } from '../../../io/index.js';
 
 export interface OpenIdConfiguration{
   variablePrefix: string;
@@ -20,7 +20,7 @@ export interface OpenIdConfiguration{
 }
 
 function getVariable(variables: Variables, variablePrefix: string, name: string): string {
-  return (variables[`${variablePrefix}_${name}`] || get(variables, `${variablePrefix}.${name}`)) as string;
+  return (variables[`${variablePrefix}_${name}`] || lodash.get(variables, `${variablePrefix}.${name}`)) as string;
 }
 
 export function getOpenIdConfiguration(variablePrefix: string, variables: Variables) : OpenIdConfiguration | false {

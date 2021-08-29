@@ -1,6 +1,6 @@
 import { promises as fs, createReadStream } from 'fs';
 import { join, isAbsolute, dirname, extname } from 'path';
-import { FileEnconding, FileProvider, PathLike } from '../models';
+import { FileEnconding, FileProvider, PathLike } from '../models/index.js';
 
 
 function toString(fileName: PathLike): string {

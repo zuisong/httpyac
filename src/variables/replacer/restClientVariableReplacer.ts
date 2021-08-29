@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import dayjs, { OpUnitType } from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-import { ProcessorContext, VariableType } from '../../models';
+import utc from 'dayjs/plugin/utc.js';
+import { ProcessorContext, VariableType } from '../../models/index.js';
 
 
 dayjs.extend(utc);

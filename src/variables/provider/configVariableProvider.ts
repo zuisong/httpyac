@@ -1,5 +1,5 @@
-import { VariableProviderContext, Variables } from '../../models';
-import { expandVariables } from '../../utils';
+import { VariableProviderContext, Variables } from '../../models/index.js';
+import { expandVariables } from '../../utils/index.js';
 
 
 const DEFAULT_ENV = '$shared';

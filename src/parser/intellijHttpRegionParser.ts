@@ -1,7 +1,7 @@
-import { HttpSymbolKind, HttpLineGenerator, HttpRegionParserResult, ParserContext, getHttpLineGenerator } from '../models';
-import { toMultiLineString } from '../utils';
-import { ScriptData, IntellijScriptData, IntellijAction } from '../actions';
-import { ParserRegex } from './parserRegex';
+import { HttpSymbolKind, HttpLineGenerator, HttpRegionParserResult, ParserContext, getHttpLineGenerator } from '../models/index.js';
+import { toMultiLineString } from '../utils/index.js';
+import { ScriptData, IntellijScriptData, IntellijAction } from '../actions/index.js';
+import { ParserRegex } from './parserRegex.js';
 
 
 export interface IntelliJParserResult {

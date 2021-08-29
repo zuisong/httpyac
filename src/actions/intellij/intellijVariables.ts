@@ -1,8 +1,8 @@
-import { Variables } from '../../models';
-import { Variables as JetbrainsVariables } from './http-client';
+import { Variables } from '../../models/index.js';
+import { Variables as JetbrainsVariables } from './http-client.js';
 
-import { intellijVariableCache } from '../../variables/provider';
-import { toEnvironmentKey } from '../../utils';
+import { intellijVariableCache } from '../../variables/provider/index.js';
+import { toEnvironmentKey } from '../../utils/index.js';
 
 export class IntellijVariables implements JetbrainsVariables {
   constructor(

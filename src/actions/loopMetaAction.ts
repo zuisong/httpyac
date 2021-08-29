@@ -1,5 +1,5 @@
-import { ActionType, SeriesHook, ProcessorContext, HookInterceptor, HookTriggerContext, Variables, HttpRegion } from '../models';
-import * as utils from '../utils';
+import { ActionType, SeriesHook, ProcessorContext, HookInterceptor, HookTriggerContext, Variables, HttpRegion } from '../models/index.js';
+import * as utils from '../utils/index.js';
 
 
 export enum LoopMetaType{

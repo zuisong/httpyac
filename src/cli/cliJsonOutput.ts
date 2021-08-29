@@ -1,5 +1,5 @@
-import { HttpRegion, HttpResponse, TestResult } from '../models';
-import { CliFilterOptions, CliOptions } from './cliOptions';
+import { HttpRegion, HttpResponse, TestResult } from '../models/index.js';
+import { CliFilterOptions, CliOptions } from './cliOptions.js';
 
 
 export interface CliJsonOutput {

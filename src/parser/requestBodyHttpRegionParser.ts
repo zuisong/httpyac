@@ -1,7 +1,7 @@
-import { getHttpLineGenerator, HttpRegionParserResult, HttpSymbol, HttpSymbolKind, ParserContext } from '../models';
-import { isString, isStringEmpty } from '../utils';
+import { getHttpLineGenerator, HttpRegionParserResult, HttpSymbol, HttpSymbolKind, ParserContext } from '../models/index.js';
+import { isString, isStringEmpty } from '../utils/index.js';
 
-import { ParserRegex } from './parserRegex';
+import { ParserRegex } from './parserRegex.js';
 
 
 export async function parseRequestBody(getLineReader: getHttpLineGenerator, context: ParserContext): Promise<HttpRegionParserResult> {

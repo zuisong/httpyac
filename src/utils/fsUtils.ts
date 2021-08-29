@@ -1,6 +1,6 @@
-import { fileProvider } from '../io';
-import { PathLike } from '../models';
-import { isString } from './stringUtils';
+import { fileProvider } from '../io/index.js';
+import { PathLike } from '../models/index.js';
+import { isString } from './stringUtils.js';
 
 
 export async function toAbsoluteFilename(fileName: PathLike | undefined, baseName: PathLike | undefined, isFolder = false): Promise<PathLike | undefined> {

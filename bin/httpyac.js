@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-const { cli } = require('../dist/index');
+import { cli } from '../dist/index.js';
 cli.execute(process.argv);

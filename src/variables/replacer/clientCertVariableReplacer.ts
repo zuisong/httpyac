@@ -1,8 +1,8 @@
-import { ClientCertificateOptions, HttpFile, HttpRequest, PathLike, ProcessorContext, VariableType } from '../../models';
-import { toAbsoluteFilename, isString } from '../../utils';
+import { ClientCertificateOptions, HttpFile, HttpRequest, PathLike, ProcessorContext, VariableType } from '../../models/index.js';
+import { toAbsoluteFilename, isString } from '../../utils/index.js';
 import { URL } from 'url';
-import { ParserRegex } from '../../parser';
-import { fileProvider } from '../../io';
+import { ParserRegex } from '../../parser/index.js';
+import { fileProvider } from '../../io/index.js';
 
 export async function clientCertVariableReplacer(
   text: string | undefined,

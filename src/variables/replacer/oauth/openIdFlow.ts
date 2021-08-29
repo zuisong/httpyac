@@ -1,6 +1,6 @@
-import { ProcessorContext, Progress } from '../../../models';
-import { OpenIdConfiguration } from './openIdConfiguration';
-import { OpenIdInformation } from './openIdInformation';
+import { ProcessorContext, Progress } from '../../../models/index.js';
+import { OpenIdConfiguration } from './openIdConfiguration.js';
+import { OpenIdInformation } from './openIdInformation.js';
 
 
 export interface OpenIdFlowContext{

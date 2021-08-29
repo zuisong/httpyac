@@ -1,13 +1,11 @@
 import path from 'path';
 import Module from 'module';
 import vm from 'vm';
-import { log, fileProvider } from '../io';
-import { isPromise } from './promiseUtils';
+import { log, fileProvider } from '../io/index.js';
+import { isPromise } from './promiseUtils.js';
 import { EOL } from 'os';
-import { PathLike } from '../models';
+import { PathLike } from '../models/index.js';
 
-// eslint-disable-next-line no-underscore-dangle, no-undef
-declare const __non_webpack_require__: NodeJS.Require;
 
 // Use `Module.createRequire` if available (added in Node v12.2.0)
 const createRequire = Module.createRequire || function createModuleRequire(fileName) {
@@ -20,7 +18,7 @@ export function resolveModule(request: string, context: string): string | undefi
     try {
       resolvedPath = createRequire(path.resolve(context, 'package.json')).resolve(request);
     } catch (e) {
-      resolvedPath = __non_webpack_require__.resolve(request, { paths: [context] });
+      resolvedPath = global.require.resolve(request, { paths: [context] });
     }
   } catch (e) {
     log.debug(e);
@@ -28,26 +26,20 @@ export function resolveModule(request: string, context: string): string | undefi
   return resolvedPath;
 }
 
-export function loadModule<T>(request: string, context: string, force = false): T | undefined {
+export function loadModule<T>(request: string, context: string): T | undefined {
   try {
-    if (force) {
-      clearModule(request, context);
-    }
     return createRequire(path.resolve(context, 'package.json'))(request);
   } catch (e) {
     const resolvedPath = resolveModule(request, context);
     if (resolvedPath) {
-      if (force) {
-        clearRequireCache(resolvedPath);
-      }
-      return __non_webpack_require__(resolvedPath);
+      return global.require(resolvedPath);
     }
   }
   return undefined;
 }
 
 function createModule(filename: string, source?: string | undefined): Module {
-  const mod = new Module(filename, require.main);
+  const mod = new Module(filename);
   mod.filename = filename;
   // see https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js#L565-L640
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-underscore-dangle
@@ -58,29 +50,6 @@ function createModule(filename: string, source?: string | undefined): Module {
   }
   return mod;
 }
-
-
-export function clearModule(request: string, context: string): void {
-  const resolvedPath = exports.resolveModule(request, context);
-  if (resolvedPath) {
-    clearRequireCache(resolvedPath);
-  }
-}
-
-function clearRequireCache(id: string, map = new Map()) {
-  const module = __non_webpack_require__.cache[id];
-  if (module) {
-    map.set(id, true);
-    // Clear children modules
-    module.children.forEach(child => {
-      if (!map.get(child.id)) {
-        clearRequireCache(child.id, map);
-      }
-    });
-    delete __non_webpack_require__.cache[id];
-  }
-}
-
 
 export async function runScript(source: string, options: {
   fileName: PathLike,
@@ -104,13 +73,7 @@ export async function runScript(source: string, options: {
     ...global,
     Buffer,
     process,
-    requireUncached: (id: string) => {
-      const dirName = fileProvider.dirname(filename);
-      if (dirName) {
-        clearModule(id, fileProvider.fsPath(dirName));
-      }
-      return mod.require(id);
-    },
+    requireUncached: (id: string) => mod.require(id),
     ...options.context,
   });
 

@@ -1,7 +1,7 @@
-import { OpenIdConfiguration } from './openIdConfiguration';
-import { HookCancel, HttpClient, HttpRequest, ProcessorContext, UserSession } from '../../../models';
-import { cloneResponse, decodeJWT, toQueryParams } from '../../../utils';
-import { log } from '../../../io';
+import { OpenIdConfiguration } from './openIdConfiguration.js';
+import { HookCancel, HttpClient, HttpRequest, ProcessorContext, UserSession } from '../../../models/index.js';
+import { cloneResponse, decodeJWT, toQueryParams } from '../../../utils/index.js';
+import { log } from '../../../io/index.js';
 
 export interface OpenIdInformation extends UserSession{
   time: number;

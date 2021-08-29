@@ -1,6 +1,6 @@
-import { HttpResponse } from '../models';
+import { HttpResponse } from '../models/index.js';
 import { strictEqual, ok } from 'assert';
-import { getHeader } from './requestUtils';
+import { getHeader } from './requestUtils.js';
 
 
 export function assertStatusEquals(response: HttpResponse, status: number): void {

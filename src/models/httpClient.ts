@@ -1,6 +1,6 @@
-import { HttpRequest } from './httpRequest';
-import { HttpResponse } from './httpResponse';
-import { HttpClientContext } from './httpClientContext';
+import { HttpRequest } from './httpRequest.js';
+import { HttpResponse } from './httpResponse.js';
+import { HttpClientContext } from './httpClientContext.js';
 
 
 export type HttpClient = (request: HttpRequest, context: HttpClientContext) => Promise<HttpResponse | false>;

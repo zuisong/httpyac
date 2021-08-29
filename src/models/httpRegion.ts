@@ -1,8 +1,8 @@
-import { ExecuteHook } from './httpFileHooks';
-import { HttpRequest } from './httpRequest';
-import { HttpResponse } from './httpResponse';
-import { HttpSymbol } from './httpSymbol';
-import { TestResult } from './testResult';
+import { ExecuteHook } from './httpFileHooks.js';
+import { HttpRequest } from './httpRequest.js';
+import { HttpResponse } from './httpResponse.js';
+import { HttpSymbol } from './httpSymbol.js';
+import { TestResult } from './testResult.js';
 
 export interface ProcessedHttpRegion{
   request?: HttpRequest;

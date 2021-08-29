@@ -1,5 +1,5 @@
-import { Variables } from '../models';
-import { isString } from './stringUtils';
+import { Variables } from '../models/index.js';
+import { isString } from './stringUtils.js';
 
 
 export function expandVariables(variables: Variables) : Variables {

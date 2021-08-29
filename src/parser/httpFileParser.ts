@@ -1,8 +1,8 @@
-import * as models from '../models';
-import * as utils from '../utils';
-import { ParserRegex } from './parserRegex';
-import { HttpFileStore } from '../store';
-import { ExecuteHook } from '../models';
+import * as models from '../models/index.js';
+import * as utils from '../utils/index.js';
+import { ParserRegex } from './parserRegex.js';
+import { HttpFileStore } from '../store/index.js';
+import { ExecuteHook } from '../models/index.js';
 
 export async function parseHttpFile(httpFile: models.HttpFile, text: string, httpFileStore: HttpFileStore): Promise<models.HttpFile> {
 

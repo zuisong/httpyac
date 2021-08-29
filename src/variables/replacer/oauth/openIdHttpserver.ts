@@ -1,5 +1,5 @@
 import { createServer, Server } from 'http';
-import { log } from '../../../io';
+import { log } from '../../../io/index.js';
 
 interface RequestListener{
   id: string;

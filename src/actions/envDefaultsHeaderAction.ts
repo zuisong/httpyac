@@ -1,4 +1,4 @@
-import { ActionType, HttpRegionAction, ProcessorContext } from '../models';
+import { ActionType, HttpRegionAction, ProcessorContext } from '../models/index.js';
 
 export class EnvDefaultHeadersAction implements HttpRegionAction {
   id = ActionType.envDefaultHeaders;

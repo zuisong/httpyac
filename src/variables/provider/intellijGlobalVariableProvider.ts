@@ -1,5 +1,5 @@
-import { Variables } from '../../models';
-import { toEnvironmentKey } from '../../utils';
+import { Variables } from '../../models/index.js';
+import { toEnvironmentKey } from '../../utils/index.js';
 
 export const intellijVariableCache: Record<string, Variables> = {};
 

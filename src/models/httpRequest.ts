@@ -1,5 +1,5 @@
-import { ContentType } from './contentType';
-import { HttpMethod } from './httpMethod';
+import { ContentType } from './contentType.js';
+import { HttpMethod } from './httpMethod.js';
 import { OptionsOfUnknownResponseBody } from 'got';
 
 export interface HttpRequest extends Omit<OptionsOfUnknownResponseBody, 'body'>{

@@ -1,11 +1,11 @@
-import { ConsoleLogHandler, RequestLogger } from './logHandler';
-import { HttpClient } from './httpClient';
-import { HttpFile } from './httpFile';
-import { HttpRegion, ProcessedHttpRegion } from './httpRegion';
-import { HttpRequest } from './httpRequest';
-import { RepeatOptions } from './repeatOptions';
-import { Variables } from './variables';
-import { EnvironmentConfig } from './environmentConfig';
+import { ConsoleLogHandler, RequestLogger } from './logHandler.js';
+import { HttpClient } from './httpClient.js';
+import { HttpFile } from './httpFile.js';
+import { HttpRegion, ProcessedHttpRegion } from './httpRegion.js';
+import { HttpRequest } from './httpRequest.js';
+import { RepeatOptions } from './repeatOptions.js';
+import { Variables } from './variables.js';
+import { EnvironmentConfig } from './environmentConfig.js';
 
 
 export type Dispose = () => void;

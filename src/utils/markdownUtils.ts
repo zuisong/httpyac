@@ -1,7 +1,7 @@
 import { EOL } from 'os';
-import { ContentType, HttpResponse, HttpResponseRequest, HttpTimings, TestResult, testSymbols } from '../models';
-import { isString, toMultiLineArray } from './stringUtils';
-import * as mimeTypeUtils from './mimeTypeUtils';
+import { ContentType, HttpResponse, HttpResponseRequest, HttpTimings, TestResult, testSymbols } from '../models/index.js';
+import { isString, toMultiLineArray } from './stringUtils.js';
+import * as mimeTypeUtils from './mimeTypeUtils.js';
 
 export function toMarkdown(response: HttpResponse, options?: {
   responseBody?: boolean,

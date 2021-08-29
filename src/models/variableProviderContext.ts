@@ -1,5 +1,5 @@
-import { EnvironmentConfig } from './environmentConfig';
-import { HttpFile } from './httpFile';
+import { EnvironmentConfig } from './environmentConfig.js';
+import { HttpFile } from './httpFile.js';
 
 export interface VariableProviderContext{
   httpFile: HttpFile;

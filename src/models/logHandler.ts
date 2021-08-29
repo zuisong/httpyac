@@ -1,5 +1,5 @@
-import { HttpRegion } from './httpRegion';
-import { HttpResponse } from './httpResponse';
+import { HttpRegion } from './httpRegion.js';
+import { HttpResponse } from './httpResponse.js';
 
 export enum LogLevel{
   trace = 1,

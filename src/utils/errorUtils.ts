@@ -1,4 +1,4 @@
-import { ErrorDescription } from '../models';
+import { ErrorDescription } from '../models/index.js';
 
 export function isError(val: unknown): val is Error {
   if (val instanceof Error) {

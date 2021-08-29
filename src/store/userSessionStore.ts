@@ -1,4 +1,4 @@
-import { UserSession, SessionStore } from '../models';
+import { UserSession, SessionStore } from '../models/index.js';
 
 
 export class UserSessionStore implements SessionStore {

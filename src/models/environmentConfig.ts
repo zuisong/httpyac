@@ -1,8 +1,8 @@
-import { ClientCertificateOptions } from './clientCertifcateOptions';
-import { HttpyacHooksApi } from './httpHooksApi';
-import { HttpRequest } from './httpRequest';
-import { LogLevel } from './logHandler';
-import { Variables } from './variables';
+import { ClientCertificateOptions } from './clientCertifcateOptions.js';
+import { HttpyacHooksApi } from './httpHooksApi.js';
+import { HttpRequest } from './httpRequest.js';
+import { LogLevel } from './logHandler.js';
+import { Variables } from './variables.js';
 
 export interface EnvironmentConfig{
   cookieJarEnabled?: boolean;

@@ -1,7 +1,7 @@
-import { ProcessorContext } from '../../models';
+import { ProcessorContext } from '../../models/index.js';
 import { URL } from 'url';
-import aws4 = require('aws4');
-import { ParserRegex } from '../../parser';
+import aws4 from 'aws4';
+import { ParserRegex } from '../../parser/index.js';
 
 export async function awsAuthVariableReplacer(text: string, type: string, { request }: ProcessorContext) : Promise<string | undefined> {
   if (type.toLowerCase() === 'authorization' && text && request?.url) {

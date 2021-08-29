@@ -1,9 +1,9 @@
-import { HttpResponse } from '../../models';
+import { HttpResponse } from '../../models/index.js';
 import {
   HttpResponse as JetbrainsHttpResponse,
   ContentType as JetbrainsContentType,
   ResponseHeaders as JetbrainsResponseHeaders
-} from './http-client';
+} from './http-client.js';
 
 
 export class IntellijHttpResponse implements JetbrainsHttpResponse {

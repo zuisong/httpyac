@@ -1,10 +1,10 @@
-import { OpenIdConfiguration, assertConfiguration } from './openIdConfiguration';
-import { OpenIdInformation, requestOpenIdInformation } from './openIdInformation';
-import { OpenIdFlow, OpenIdFlowContext } from './openIdFlow';
-import { toQueryParams, stateGenerator } from '../../../utils';
+import { OpenIdConfiguration, assertConfiguration } from './openIdConfiguration.js';
+import { OpenIdInformation, requestOpenIdInformation } from './openIdInformation.js';
+import { OpenIdFlow, OpenIdFlowContext } from './openIdFlow.js';
+import { toQueryParams, stateGenerator } from '../../../utils/index.js';
 import open from 'open';
-import { registerListener, unregisterListener } from './openIdHttpserver';
-import { ProcessorContext } from '../../../models';
+import { registerListener, unregisterListener } from './openIdHttpserver.js';
+import { ProcessorContext } from '../../../models/index.js';
 
 class AuthorizationCodeFlow implements OpenIdFlow {
   supportsFlow(flow: string): boolean {

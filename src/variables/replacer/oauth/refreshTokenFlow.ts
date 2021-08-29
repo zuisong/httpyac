@@ -1,6 +1,6 @@
-import { OpenIdInformation, requestOpenIdInformation } from './openIdInformation';
-import { toQueryParams } from '../../../utils';
-import { HttpClient, ProcessorContext } from '../../../models';
+import { OpenIdInformation, requestOpenIdInformation } from './openIdInformation.js';
+import { toQueryParams } from '../../../utils/index.js';
+import { HttpClient, ProcessorContext } from '../../../models/index.js';
 
 class RefreshTokenFlow {
 

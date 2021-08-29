@@ -1,8 +1,8 @@
-import { OpenIdConfiguration, assertConfiguration } from './openIdConfiguration';
-import { OpenIdInformation, requestOpenIdInformation } from './openIdInformation';
-import { OpenIdFlow, OpenIdFlowContext } from './openIdFlow';
-import { toQueryParams } from '../../../utils';
-import { ProcessorContext } from '../../../models';
+import { OpenIdConfiguration, assertConfiguration } from './openIdConfiguration.js';
+import { OpenIdInformation, requestOpenIdInformation } from './openIdInformation.js';
+import { OpenIdFlow, OpenIdFlowContext } from './openIdFlow.js';
+import { toQueryParams } from '../../../utils/index.js';
+import { ProcessorContext } from '../../../models/index.js';
 
 class ClientCredentialsFlow implements OpenIdFlow {
   supportsFlow(flow: string): boolean {

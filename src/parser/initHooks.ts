@@ -1,18 +1,18 @@
-import * as models from '../models';
+import * as models from '../models/index.js';
 
-import { parseComment } from './commentHttpRegionParser';
-import { parseGraphql } from './gqlHttpRegionParser';
-import { parseIntellijScript } from './intellijHttpRegionParser';
-import { parseJavascript } from './javascriptHttpRegionParser';
-import { parseMetaData } from './metaHttpRegionParser';
-import { parseRequestBody, closeRequestBody } from './requestBodyHttpRegionParser';
-import { parseRequestLine } from './requestHttpRegionParser';
-import { parseResponse, closeResponseBody } from './responseHttpRegionParser';
-import { parseResponseRef } from './responseRefHttpRegionParser';
-import { parseVariable } from './variableHttpRegionParser';
+import { parseComment } from './commentHttpRegionParser.js';
+import { parseGraphql } from './gqlHttpRegionParser.js';
+import { parseIntellijScript } from './intellijHttpRegionParser.js';
+import { parseJavascript } from './javascriptHttpRegionParser.js';
+import { parseMetaData } from './metaHttpRegionParser.js';
+import { parseRequestBody, closeRequestBody } from './requestBodyHttpRegionParser.js';
+import { parseRequestLine } from './requestHttpRegionParser.js';
+import { parseResponse, closeResponseBody } from './responseHttpRegionParser.js';
+import { parseResponseRef } from './responseRefHttpRegionParser.js';
+import { parseVariable } from './variableHttpRegionParser.js';
 
-import { injectOnEveryRequestJavascript } from './javascriptHttpRegionParser';
-import { injectNote } from './noteMetaHttpRegionParser';
+import { injectOnEveryRequestJavascript } from './javascriptHttpRegionParser.js';
+import { injectNote } from './noteMetaHttpRegionParser.js';
 
 
 export enum ParserId {

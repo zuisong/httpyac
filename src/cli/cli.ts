@@ -1,15 +1,15 @@
 import inquirer from 'inquirer';
 import { promises as fs } from 'fs';
-import { join } from 'path';
-import * as models from '../models';
-import { HttpFileStore } from '../store';
-import { send } from '../httpYacApi';
-import * as utils from '../utils';
+import { join, resolve } from 'path';
+import * as models from '../models/index.js';
+import { HttpFileStore } from '../store/index.js';
+import { send } from '../httpYacApi.js';
+import * as utils from '../utils/index.js';
 import { default as globby } from 'globby';
-import { fileProvider, Logger } from '../io';
-import { CliOptions, parseCliOptions, renderHelp, getLogLevel, CliFilterOptions } from './cliOptions';
-import { CliContext } from './cliContext';
-import { toCliJsonOutput } from './cliJsonOutput';
+import { fileProvider, Logger } from '../io/index.js';
+import { CliOptions, parseCliOptions, renderHelp, getLogLevel, CliFilterOptions } from './cliOptions.js';
+import { CliContext } from './cliContext.js';
+import { toCliJsonOutput } from './cliJsonOutput.js';
 import { default as chalk } from 'chalk';
 
 
@@ -19,7 +19,7 @@ export async function execute(rawArgs: string[]): Promise<void> {
     return;
   }
   if (cliOptions.version) {
-    const packageJson = await utils.parseJson<Record<string, string>>(join(__dirname, '../package.json'));
+    const packageJson = await utils.parseJson<Record<string, string>>(join(resolve('./package.json')));
     console.info(`httpyac v${packageJson?.version}`);
     return;
   }

@@ -1,7 +1,7 @@
-import { OpenIdConfiguration, assertConfiguration } from './openIdConfiguration';
-import { OpenIdInformation, requestOpenIdInformation } from './openIdInformation';
-import { toQueryParams, decodeJWT } from '../../../utils';
-import { ProcessorContext } from '../../../models';
+import { OpenIdConfiguration, assertConfiguration } from './openIdConfiguration.js';
+import { OpenIdInformation, requestOpenIdInformation } from './openIdInformation.js';
+import { toQueryParams, decodeJWT } from '../../../utils/index.js';
+import { ProcessorContext } from '../../../models/index.js';
 import encodeUrl from 'encodeurl';
 
 export class TokenExchangeFlow {

@@ -1,7 +1,7 @@
-import { testFactory } from '../actions';
-import * as models from '../models';
-import * as utils from '../utils';
-import { ParserRegex } from './parserRegex';
+import { testFactory } from '../actions/index.js';
+import * as models from '../models/index.js';
+import * as utils from '../utils/index.js';
+import { ParserRegex } from './parserRegex.js';
 
 
 export interface ScriptData {

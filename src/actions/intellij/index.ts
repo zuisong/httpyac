@@ -1,3 +1,3 @@
-export * from './intellijHttpClient';
-export * from './intellijHttpResponse';
-export * from './intellijVariables';
+export * from './intellijHttpClient.js';
+export * from './intellijHttpResponse.js';
+export * from './intellijVariables.js';

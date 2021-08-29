@@ -1,6 +1,6 @@
-import { initHttpClient, log } from './io';
-import * as models from './models';
-import * as utils from './utils';
+import { initHttpClient, log } from './io/index.js';
+import * as models from './models/index.js';
+import * as utils from './utils/index.js';
 
 
 /**

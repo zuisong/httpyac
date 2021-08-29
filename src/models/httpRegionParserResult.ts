@@ -1,4 +1,4 @@
-import { HttpSymbol } from './httpSymbol';
+import { HttpSymbol } from './httpSymbol.js';
 
 export interface HttpRegionParserResultValid {
   endRegionLine?: number;

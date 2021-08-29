@@ -1,6 +1,6 @@
-import { HttpSymbolKind, getHttpLineGenerator, HttpRegionParserResult, ParserContext } from '../models';
-import { VariableAction } from '../actions';
-import { ParserRegex } from './parserRegex';
+import { HttpSymbolKind, getHttpLineGenerator, HttpRegionParserResult, ParserContext } from '../models/index.js';
+import { VariableAction } from '../actions/index.js';
+import { ParserRegex } from './parserRegex.js';
 
 
 export async function parseVariable(getLineReader: getHttpLineGenerator, { httpRegion }: ParserContext): Promise<HttpRegionParserResult> {

@@ -1,6 +1,6 @@
-import { log } from '../io';
-import { ActionType, HttpRegionAction, PathLike, ProcessorContext } from '../models';
-import { isString, toMultiLineString } from '../utils';
+import { log } from '../io/index.js';
+import { ActionType, HttpRegionAction, PathLike, ProcessorContext } from '../models/index.js';
+import { isString, toMultiLineString } from '../utils/index.js';
 
 
 export interface GqlData{

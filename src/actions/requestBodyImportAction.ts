@@ -1,6 +1,6 @@
-import { ActionType, HttpRegionAction, HttpRequestBodyLine, ProcessorContext, RequestBodyImport } from '../models';
-import { isMimeTypeFormUrlEncoded, isMimeTypeMultiPartFormData, isMimeTypeNewlineDelimitedJSON, isString, toAbsoluteFilename } from '../utils';
-import { fileProvider, userInteractionProvider, log } from '../io';
+import { ActionType, HttpRegionAction, HttpRequestBodyLine, ProcessorContext, RequestBodyImport } from '../models/index.js';
+import { isMimeTypeFormUrlEncoded, isMimeTypeMultiPartFormData, isMimeTypeNewlineDelimitedJSON, isString, toAbsoluteFilename } from '../utils/index.js';
+import { fileProvider, userInteractionProvider, log } from '../io/index.js';
 import { EOL } from 'os';
 
 

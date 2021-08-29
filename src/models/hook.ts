@@ -1,4 +1,4 @@
-import { log } from '../io';
+import { log } from '../io/index.js';
 
 interface BaseHookItem {
   id: string;

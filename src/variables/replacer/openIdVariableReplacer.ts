@@ -1,8 +1,8 @@
-import { ProcessorContext, HttpClient, UserSession, HookCancel } from '../../models';
-import { userSessionStore } from '../../store';
-import * as oauth from './oauth';
-import { ParserRegex } from '../../parser';
-import { log } from '../../io';
+import { ProcessorContext, HttpClient, UserSession, HookCancel } from '../../models/index.js';
+import { userSessionStore } from '../../store/index.js';
+import * as oauth from './oauth/index.js';
+import { ParserRegex } from '../../parser/index.js';
+import { log } from '../../io/index.js';
 
 
 export async function openIdVariableReplacer(text: string, type: string, context: ProcessorContext): Promise<string | undefined | typeof HookCancel> {

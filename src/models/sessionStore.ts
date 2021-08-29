@@ -1,4 +1,4 @@
-import { UserSession } from './userSession';
+import { UserSession } from './userSession.js';
 
 export interface SessionStore {
   reset(): Promise<void>;

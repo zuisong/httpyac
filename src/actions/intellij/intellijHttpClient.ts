@@ -1,8 +1,8 @@
 import { ok } from 'assert';
-import { ProcessorContext } from '../../models';
-import { testFactory } from '../testMethod';
-import { HttpClient as JetbrainsHttpClient, Variables as JetbrainsVariables } from './http-client';
-import { IntellijVariables } from './intellijVariables';
+import { ProcessorContext } from '../../models/index.js';
+import { testFactory } from '../testMethod.js';
+import { HttpClient as JetbrainsHttpClient, Variables as JetbrainsVariables } from './http-client.js';
+import { IntellijVariables } from './intellijVariables.js';
 
 export class IntellijHttpClient implements JetbrainsHttpClient {
   global: JetbrainsVariables;

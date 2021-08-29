@@ -1,4 +1,4 @@
-import { PathLike } from './pathLike';
+import { PathLike } from './pathLike.js';
 
 export interface ClientCertificateOptions{
   cert?: PathLike;

@@ -1,5 +1,5 @@
-import { HttpSymbolKind, getHttpLineGenerator, HttpRegionParserResult, ParserContext } from '../models';
-import { ParserRegex } from './parserRegex';
+import { HttpSymbolKind, getHttpLineGenerator, HttpRegionParserResult, ParserContext } from '../models/index.js';
+import { ParserRegex } from './parserRegex.js';
 
 export async function parseResponseRef(getLineReader: getHttpLineGenerator, { httpRegion }: ParserContext): Promise<HttpRegionParserResult> {
   const lineReader = getLineReader();

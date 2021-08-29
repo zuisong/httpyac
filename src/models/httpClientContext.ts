@@ -1,5 +1,5 @@
-import { Progress } from './processorContext';
-import { RepeatOptions } from './repeatOptions';
+import { Progress } from './processorContext.js';
+import { RepeatOptions } from './repeatOptions.js';
 
 export interface HttpClientContext{
   progress?: Progress | undefined,

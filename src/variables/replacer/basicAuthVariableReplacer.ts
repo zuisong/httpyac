@@ -1,4 +1,4 @@
-import { ParserRegex } from '../../parser';
+import { ParserRegex } from '../../parser/index.js';
 
 export async function basicAuthVariableReplacer(text: string | undefined, type: string): Promise<string | undefined> {
   if (type.toLowerCase() === 'authorization' && text) {

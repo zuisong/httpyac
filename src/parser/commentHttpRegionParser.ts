@@ -1,6 +1,6 @@
-import { HttpSymbolKind, getHttpLineGenerator, HttpLineGenerator, HttpRegionParserResult, ParserContext } from '../models';
-import { toMultiLineString } from '../utils';
-import { ParserRegex } from './parserRegex';
+import { HttpSymbolKind, getHttpLineGenerator, HttpLineGenerator, HttpRegionParserResult, ParserContext } from '../models/index.js';
+import { toMultiLineString } from '../utils/index.js';
+import { ParserRegex } from './parserRegex.js';
 
 
 export async function parseComment(getLineReader: getHttpLineGenerator, { httpRegion }: ParserContext): Promise<HttpRegionParserResult> {

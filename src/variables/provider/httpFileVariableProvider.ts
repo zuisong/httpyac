@@ -1,5 +1,5 @@
-import { VariableProviderContext, Variables } from '../../models';
-import { toEnvironmentKey } from '../../utils';
+import { VariableProviderContext, Variables } from '../../models/index.js';
+import { toEnvironmentKey } from '../../utils/index.js';
 
 export async function httpFileVariableProvider(env: string[] | undefined, context: VariableProviderContext) : Promise<Variables> {
   const envkey = toEnvironmentKey(env);

@@ -1,10 +1,10 @@
-export * from './httpYacApi';
-export * from './models';
+export * from './httpYacApi.js';
+export * from './models/index.js';
 
-export * as actions from './actions';
-export * as cli from './cli';
-export * as io from './io';
-export * as parser from './parser';
-export * as store from './store';
-export * as utils from './utils';
-export * as variables from './variables';
+export * as actions from './actions/index.js';
+export * as cli from './cli/index.js';
+export * as io from './io/index.js';
+export * as parser from './parser/index.js';
+export * as store from './store/index.js';
+export * as utils from './utils/index.js';
+export * as variables from './variables/index.js';

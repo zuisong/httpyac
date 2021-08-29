@@ -1,16 +1,16 @@
-import { ReplaceVariableHook } from '../../models';
-import { awsAuthVariableReplacer } from './awsAuthVariableReplacer';
-import { basicAuthVariableReplacer } from './basicAuthVariableReplacer';
-import { clientCertVariableReplacer } from './clientCertVariableReplacer';
-import { digestAuthVariableReplacer } from './digestAuthVariableReplacer';
-import { escapeVariableReplacer } from './escapeVariableReplacer';
-import { hostVariableReplacer } from './hostVariableReplacer';
-import { intellijVariableReplacer } from './intellijVariableReplacer';
-import { javascriptVariableReplacer } from './javascriptVariableReplacer';
-import { openIdVariableReplacer } from './openIdVariableReplacer';
-import { restClientVariableReplacer } from './restClientVariableReplacer';
-import { showInputBoxVariableReplacer } from './showInputBoxVariableReplacer';
-import { showQuickpickVariableReplacer } from './showQuickpickVariableReplacer';
+import { ReplaceVariableHook } from '../../models/index.js';
+import { awsAuthVariableReplacer } from './awsAuthVariableReplacer.js';
+import { basicAuthVariableReplacer } from './basicAuthVariableReplacer.js';
+import { clientCertVariableReplacer } from './clientCertVariableReplacer.js';
+import { digestAuthVariableReplacer } from './digestAuthVariableReplacer.js';
+import { escapeVariableReplacer } from './escapeVariableReplacer.js';
+import { hostVariableReplacer } from './hostVariableReplacer.js';
+import { intellijVariableReplacer } from './intellijVariableReplacer.js';
+import { javascriptVariableReplacer } from './javascriptVariableReplacer.js';
+import { openIdVariableReplacer } from './openIdVariableReplacer.js';
+import { restClientVariableReplacer } from './restClientVariableReplacer.js';
+import { showInputBoxVariableReplacer } from './showInputBoxVariableReplacer.js';
+import { showQuickpickVariableReplacer } from './showQuickpickVariableReplacer.js';
 
 
 export enum VariableReplacerType{

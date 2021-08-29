@@ -1,7 +1,7 @@
-import { log } from '../io';
-import { ActionType, HttpRegionAction, ProcessorContext } from '../models';
-import { decodeJWT, isString, JWTToken, toEnvironmentKey } from '../utils';
-import { isValidVariableName } from './javascriptAction';
+import { log } from '../io/index.js';
+import { ActionType, HttpRegionAction, ProcessorContext } from '../models/index.js';
+import { decodeJWT, isString, JWTToken, toEnvironmentKey } from '../utils/index.js';
+import { isValidVariableName } from './javascriptAction.js';
 
 export class ResponseAsVariableAction implements HttpRegionAction {
   id = ActionType.response;

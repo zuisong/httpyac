@@ -1,4 +1,4 @@
-import { ContentType } from '../models';
+import { ContentType } from '../models/index.js';
 
 export function parseMimeType(contentType: string): ContentType {
   const [mimeType, ...parameters] = contentType.split(';').map(v => v.trim());

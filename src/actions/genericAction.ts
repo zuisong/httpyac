@@ -1,4 +1,4 @@
-import { HttpRegionAction, ProcessorContext } from '../models';
+import { HttpRegionAction, ProcessorContext } from '../models/index.js';
 
 
 export class GenericAction implements HttpRegionAction {

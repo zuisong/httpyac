@@ -1,7 +1,7 @@
-import { HttpFileStore } from '../store';
-import { HttpFile } from './httpFile';
-import { HttpRegion } from './httpRegion';
-import { ParserContextData } from './parserContextData';
+import { HttpFileStore } from '../store/index.js';
+import { HttpFile } from './httpFile.js';
+import { HttpRegion } from './httpRegion.js';
+import { ParserContextData } from './parserContextData.js';
 
 
 export type HttpLineGenerator = Generator<{ textLine: string; line: number; }, void, unknown>;

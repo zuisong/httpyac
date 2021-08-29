@@ -1,6 +1,6 @@
-import { ActionType, HttpRegionAction, HttpRequest, HttpRequestBodyLine, ProcessorContext, VariableType, HookCancel } from '../models';
-import { replaceVariables } from './variableAction';
-import { isString } from '../utils';
+import { ActionType, HttpRegionAction, HttpRequest, HttpRequestBodyLine, ProcessorContext, VariableType, HookCancel } from '../models/index.js';
+import { replaceVariables } from './variableAction.js';
+import { isString } from '../utils/index.js';
 
 
 export class VariableReplacerAction implements HttpRegionAction {

@@ -1,6 +1,6 @@
-import { fileProvider, log } from '../../io';
-import { PathLike, VariableProviderContext, Variables } from '../../models';
-import { expandVariables, toAbsoluteFilename } from '../../utils';
+import { fileProvider, log } from '../../io/index.js';
+import { PathLike, VariableProviderContext, Variables } from '../../models/index.js';
+import { expandVariables, toAbsoluteFilename } from '../../utils/index.js';
 
 const defaultFiles: Array<string> = ['http-client.env.json', 'http-client.private.env.json'];
 

@@ -1,6 +1,6 @@
-import { HttpSymbol, HttpSymbolKind, getHttpLineGenerator, HttpRegionParserResult, ParserContext, HttpRegion } from '../models';
-import * as actions from '../actions';
-import { ParserRegex } from './parserRegex';
+import { HttpSymbol, HttpSymbolKind, getHttpLineGenerator, HttpRegionParserResult, ParserContext, HttpRegion } from '../models/index.js';
+import * as actions from '../actions/index.js';
+import { ParserRegex } from './parserRegex.js';
 
 
 export async function parseMetaData(getLineReader: getHttpLineGenerator, context: ParserContext): Promise<HttpRegionParserResult> {

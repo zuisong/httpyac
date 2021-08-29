@@ -1,4 +1,4 @@
-import { HttpSymbolKind } from './httpSymbolKind';
+import { HttpSymbolKind } from './httpSymbolKind.js';
 
 export interface HttpSymbol{
   name: string;

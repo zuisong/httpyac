@@ -1,13 +1,13 @@
-import * as models from '../models';
-import { initParseEndHook, initParseHook, parseHttpFile } from '../parser';
-import { fileProvider, log, userInteractionProvider } from '../io';
-import { userSessionStore as sessionStore } from '../store';
-import { getEnvironments } from '../httpYacApi';
-import { replacer, provider } from '../variables';
-import * as utils from '../utils';
-import merge from 'lodash/merge';
+import * as models from '../models/index.js';
+import { initParseEndHook, initParseHook, parseHttpFile } from '../parser/index.js';
+import { fileProvider, log, userInteractionProvider } from '../io/index.js';
+import { userSessionStore as sessionStore } from '../store/index.js';
+import { getEnvironments } from '../httpYacApi.js';
+import { replacer, provider } from '../variables/index.js';
+import * as utils from '../utils/index.js';
+import lodash from 'lodash';
 import { default as chalk } from 'chalk';
-import { HookCancel } from '../models';
+import { HookCancel } from '../models/index.js';
 
 interface HttpFileStoreEntry{
   version: number;
@@ -204,7 +204,7 @@ export async function getEnviromentConfig(context: models.VariableProviderContex
     environmentConfigs.push(context.config);
   }
 
-  const config = merge({
+  const config = lodash.merge({
     log: {
       level: models.LogLevel.warn,
       supportAnsiColors: true,

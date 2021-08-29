@@ -1,6 +1,6 @@
-import { ContentType } from './contentType';
-import { HttpMethod } from './httpMethod';
-import { HttpTimings } from './httpTimings';
+import { ContentType } from './contentType.js';
+import { HttpMethod } from './httpMethod.js';
+import { HttpTimings } from './httpTimings.js';
 
 export interface HttpResponse{
   httpVersion?: string;

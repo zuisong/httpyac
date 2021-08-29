@@ -1,12 +1,12 @@
-import { EnvironmentConfig } from './environmentConfig';
-import { FileProvider } from './fileProvider';
-import { HookCancel } from './hook';
-import { HttpFile } from './httpFile';
-import { HttpFileHooks } from './httpFileHooks';
-import { LogHandler } from './logHandler';
-import { PathLike } from './pathLike';
-import { SessionStore } from './sessionStore';
-import { UserInteractonProvider } from './userInteractonProvider';
+import { EnvironmentConfig } from './environmentConfig.js';
+import { FileProvider } from './fileProvider.js';
+import { HookCancel } from './hook.js';
+import { HttpFile } from './httpFile.js';
+import { HttpFileHooks } from './httpFileHooks.js';
+import { LogHandler } from './logHandler.js';
+import { PathLike } from './pathLike.js';
+import { SessionStore } from './sessionStore.js';
+import { UserInteractonProvider } from './userInteractonProvider.js';
 
 export interface HttpyacHooksApi{
   readonly version: string;

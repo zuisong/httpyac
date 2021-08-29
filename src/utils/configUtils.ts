@@ -1,7 +1,7 @@
-import { fileProvider, log } from '../io';
-import { ConfigureHooks, EnvironmentConfig, PathLike } from '../models';
-import { toAbsoluteFilename, findRootDir } from './fsUtils';
-import { loadModule } from './moduleUtils';
+import { fileProvider, log } from '../io/index.js';
+import { ConfigureHooks, EnvironmentConfig, PathLike } from '../models/index.js';
+import { toAbsoluteFilename, findRootDir } from './fsUtils.js';
+import { loadModule } from './moduleUtils.js';
 
 export async function getHttpacConfig(rootDir: PathLike) : Promise<EnvironmentConfig | undefined> {
   let result = await loadFileConfig(rootDir);

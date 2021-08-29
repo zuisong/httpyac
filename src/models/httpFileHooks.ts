@@ -1,11 +1,11 @@
-import { BailSeriesHook, WaterfallHook, SeriesHook } from './hook';
-import { HttpRegionParserResult } from './httpRegionParserResult';
-import { HttpRequest } from './httpRequest';
-import { HttpResponse } from './httpResponse';
-import { getHttpLineGenerator, ParserContext } from './parserContext';
-import { ProcessorContext } from './processorContext';
-import { VariableProviderContext } from './variableProviderContext';
-import { Variables } from './variables';
+import { BailSeriesHook, WaterfallHook, SeriesHook } from './hook.js';
+import { HttpRegionParserResult } from './httpRegionParserResult.js';
+import { HttpRequest } from './httpRequest.js';
+import { HttpResponse } from './httpResponse.js';
+import { getHttpLineGenerator, ParserContext } from './parserContext.js';
+import { ProcessorContext } from './processorContext.js';
+import { VariableProviderContext } from './variableProviderContext.js';
+import { Variables } from './variables.js';
 
 export interface HttpFileHooks{
   readonly parse: ParseHook,

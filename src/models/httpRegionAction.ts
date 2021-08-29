@@ -1,4 +1,4 @@
-import { ProcessorContext } from './processorContext';
+import { ProcessorContext } from './processorContext.js';
 
 
 /**

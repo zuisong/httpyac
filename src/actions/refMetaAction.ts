@@ -1,6 +1,6 @@
-import { processHttpRegionActions } from '../utils';
-import { ActionType, HttpRegionAction } from '../models';
-import { ImportProcessorContext } from './importMetaAction';
+import { processHttpRegionActions } from '../utils/index.js';
+import { ActionType, HttpRegionAction } from '../models/index.js';
+import { ImportProcessorContext } from './importMetaAction.js';
 
 export interface RefMetaHttpRegionData {
   name: string;

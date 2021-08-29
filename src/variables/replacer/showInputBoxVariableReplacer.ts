@@ -1,5 +1,5 @@
-import { HookCancel } from '../../models';
-import { userInteractionProvider } from '../../io';
+import { HookCancel } from '../../models/index.js';
+import { userInteractionProvider } from '../../io/index.js';
 
 const lastValue: Record<string, string> = {};
 

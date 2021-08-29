@@ -1,7 +1,7 @@
-import { ParserContext } from '../models';
-import { getDisplayName } from '../utils';
-import { userInteractionProvider } from '../io';
-import { ParserId } from './initHooks';
+import { ParserContext } from '../models/index.js';
+import { getDisplayName } from '../utils/index.js';
+import { userInteractionProvider } from '../io/index.js';
+import { ParserId } from './initHooks.js';
 
 export async function injectNote({ httpRegion }: ParserContext): Promise<void> {
   if (httpRegion.metaData.note) {
