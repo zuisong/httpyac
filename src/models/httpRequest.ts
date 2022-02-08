@@ -1,7 +1,7 @@
 import { ContentType } from './contentType';
 import { HttpMethod } from './httpMethod';
 import { ChannelOptions } from '@grpc/grpc-js';
-import { OptionsOfUnknownResponseBody } from 'got';
+import type { OptionsOfUnknownResponseBody } from 'got';
 import { IClientOptions as MQTTOptions } from 'mqtt';
 import { ClientOptions as WebsocketOptions } from 'ws';
 

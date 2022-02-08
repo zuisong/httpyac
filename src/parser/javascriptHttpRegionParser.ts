@@ -4,7 +4,6 @@ import * as utils from '../utils';
 import { ParserRegex } from './parserRegex';
 import * as grpc from '@grpc/grpc-js';
 import { default as chalk } from 'chalk';
-import { default as got } from 'got';
 import { HookInterceptor, HookTriggerContext } from 'hookpoint';
 
 export interface ScriptData {
@@ -121,6 +120,7 @@ export class AfterJavascriptHookInterceptor implements HookInterceptor<[models.P
 }
 async function executeScriptData(scriptData: ScriptData, context: models.ProcessorContext, eventName?: string) {
   utils.report(context, eventName ? `execute javascript (@${eventName})` : 'execute javascript');
+  const { got } = await import('got');
   const result = await utils.runScript(scriptData.script, {
     fileName: context.httpFile.fileName,
     context: {

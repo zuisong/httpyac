@@ -2,7 +2,7 @@ import { ProcessorContext } from '../../models';
 import { ParserRegex } from '../../parser';
 import { isHttpRequest, isString } from '../../utils';
 import { createHash } from 'crypto';
-import { CancelableRequest, OptionsOfUnknownResponseBody, Response } from 'got';
+import type { CancelableRequest, OptionsOfUnknownResponseBody, Response } from 'got';
 import { URL } from 'url';
 import { v4 as uuidv4 } from 'uuid';
 

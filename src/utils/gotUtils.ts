@@ -2,7 +2,7 @@ import { log } from '../io';
 import { HttpClient, HttpClientContext, HttpRequest, HttpResponse, RepeatOrder, EnvironmentConfig } from '../models';
 import { parseContentType } from './requestUtils';
 import { default as filesize } from 'filesize';
-import { default as got, OptionsOfUnknownResponseBody, CancelError, Response } from 'got';
+import type { OptionsOfUnknownResponseBody, Response } from 'got';
 import { HttpProxyAgent } from 'http-proxy-agent';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 import merge from 'lodash/merge';
@@ -11,22 +11,26 @@ import { SocksProxyAgent } from 'socks-proxy-agent';
 export function gotHttpClientFactory(defaultsOverride: HttpRequest | undefined): HttpClient {
   return async function gotHttpClient(request: HttpRequest, context: HttpClientContext): Promise<HttpResponse | false> {
     try {
-      const defaults: OptionsOfUnknownResponseBody = {
-        decompress: true,
-        retry: 0,
-        throwHttpErrors: false,
-        headers: {
-          accept: '*/*',
-          'user-agent': 'httpyac',
-        },
-      };
-
       const url = request.url;
 
       if (!url) {
         throw new Error('empty url');
       }
-      const mergedRequest: HttpRequest = merge({}, defaults, defaultsOverride, request);
+      const mergedRequest: HttpRequest = merge(
+        {
+          decompress: true,
+          retry: {
+            limit: 0,
+          },
+          throwHttpErrors: false,
+          headers: {
+            accept: '*/*',
+            'user-agent': 'httpyac',
+          },
+        },
+        removeUndefinedValues(defaultsOverride),
+        removeUndefinedValues(request)
+      );
       delete mergedRequest.url;
       initProxy(mergedRequest);
 
@@ -44,6 +48,7 @@ export function gotHttpClientFactory(defaultsOverride: HttpRequest | undefined):
       }
       throw new Error('no response');
     } catch (err) {
+      const { CancelError } = await import('got');
       if (err instanceof CancelError) {
         return false;
       }
@@ -58,7 +63,15 @@ export function gotHttpClientFactory(defaultsOverride: HttpRequest | undefined):
   }
 }
 
+function removeUndefinedValues(obj: HttpRequest | undefined) {
+  if (obj) {
+    return Object.fromEntries(Object.entries(obj).filter(([, value]) => typeof value !== 'undefined'));
+  }
+  return obj;
+}
+
 async function loadRepeat(url: string, options: OptionsOfUnknownResponseBody, context: HttpClientContext) {
+  const { got } = await import('got');
   const loadFunc = async () => toHttpResponse(await got(url, options));
   const loader: Array<() => Promise<HttpResponse>> = [];
   for (let index = 0; index < (context.repeat?.count || 1); index++) {
@@ -76,6 +89,7 @@ async function loadRepeat(url: string, options: OptionsOfUnknownResponseBody, co
 }
 
 async function load(url: string, options: OptionsOfUnknownResponseBody, context: HttpClientContext) {
+  const { got } = await import('got');
   const responsePromise = got(url, options);
 
   let prevPercent = 0;
