@@ -57,7 +57,7 @@ export class HttpRegion implements models.HttpRegion {
     isMainContext?: boolean
   ): Promise<boolean> {
     delete this.response;
-    delete this.testResults;
+    this.testResults = [];
 
     if (context.httpRegion) {
       this.registerRegionDependent(context.httpRegion);
@@ -97,7 +97,7 @@ export class HttpRegion implements models.HttpRegion {
           err.handled = true;
         }
       }
-      throw err;
+      return false;
     }
   }
   private dependentsPerEnv: Array<models.HttpRegion> = [];

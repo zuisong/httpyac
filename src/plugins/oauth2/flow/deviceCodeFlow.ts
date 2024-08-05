@@ -13,10 +13,8 @@ class DeviceCodeFlow implements OpenIdFlow {
   }
 
   getCacheKey(config: models.OpenIdConfiguration) {
-    if (assertConfiguration(config, ['tokenEndpoint', 'deviceCodeEndpoint', 'clientId'])) {
-      return `device_code_${config.variablePrefix}_${config.clientId}_${config.tokenEndpoint}`;
-    }
-    return false;
+    assertConfiguration(config, ['tokenEndpoint', 'deviceCodeEndpoint', 'clientId']);
+    return `device_code_${config.variablePrefix}_${config.clientId}_${config.tokenEndpoint}`;
   }
 
   async perform(
@@ -100,7 +98,7 @@ class DeviceCodeFlow implements OpenIdFlow {
               return false;
             }
           } catch (err) {
-            io.log.debug(err);
+            io.log.debug('error in deviceCodeFlow', err);
             return false;
           }
         }

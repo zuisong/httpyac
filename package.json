@@ -4,7 +4,7 @@
   "license": "MIT",
   "publisher": "AnWeber",
   "description": "HTTP/REST CLI Client for *.http files",
-  "version": "6.14.0",
+  "version": "6.15.0",
   "homepage": "https://github.com/AnWeber/httpyac",
   "repository": {
     "type": "git",
@@ -90,7 +90,7 @@
     "lockfile-lint": "^4.13.2",
     "mockttp": "^3.11.0",
     "prettier": "^3.2.5",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.4"
   },
   "dependencies": {
     "@cloudamqp/amqp-client": "^2.1.1",
@@ -111,7 +111,7 @@
     "google-protobuf": "^3.21.2",
     "got": "^11.8.6",
     "grpc-js-reflection-client": "^1.2.14",
-    "hookpoint": "4.0.1",
+    "hookpoint": "4.1.0",
     "http-proxy-agent": "^7.0.2",
     "https-proxy-agent": "^7.0.4",
     "inquirer": "^9.2.20",

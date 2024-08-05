@@ -1,6 +1,20 @@
 ## [unreleased]
+
+### Fix
+
+- ensure valid names of parsed symbols (AnWeber/vscode-httpyac#297)
+
+## [6.15.0] ( 2024-08-04)
+### Features
+- add support to define timeout per request using `request.timeout` or setting variable `request_timeout`
+
 ### Fix
 - variables in gql Query body are replaced (AnWeber/vscode-httpyac#303)
+- allow defaultHeaders to overwrite accept or user-agent header
+- only try loading grpc reflection if no other protodefinition file is imported or it is explicitly triggerd using grpcReflection (#757)
+- add better handling for disabled and error tests (Anweber/vscode-httpyac#297, #760)
+- support empty passwords for Basic auth  (#751)
+- error do not bail test runs and instead just set error for this httpRegion (#708)
 
 ## [6.14.0] ( 2024-06-01)
 ### Features

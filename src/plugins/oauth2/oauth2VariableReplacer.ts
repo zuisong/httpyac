@@ -1,7 +1,7 @@
 import { HookCancel } from 'hookpoint';
 
 import { log } from '../../io';
-import type * as models from '../../models';
+import * as models from '../../models';
 import { userSessionStore } from '../../store';
 import * as utils from '../../utils';
 import * as flows from './flow';
@@ -28,6 +28,10 @@ export async function oauth2VariableReplacer(
       if (openIdInformation) {
         return `Bearer ${openIdInformation.accessToken}`;
       }
+      utils.addTestResultToHttpRegion(context.httpRegion, {
+        message: 'OAuth2 did not retrieve AccessToken',
+        status: models.TestResultStatus.ERROR,
+      });
       return HookCancel;
     }
   }
@@ -44,30 +48,29 @@ export async function getOAuth2Response(
   if (openIdFlow) {
     const config = getOpenIdConfiguration(prefix, context.variables);
     const cacheKey = openIdFlow.getCacheKey(config);
-    if (cacheKey) {
-      const tokenExchangeConfig = getOpenIdConfiguration(tokenExchangePrefix, context.variables);
-      let openIdInformation = getSessionOpenIdInformation(cacheKey, tokenExchangePrefix ? tokenExchangeConfig : config);
-      userSessionStore.removeUserSession(cacheKey);
-      if (openIdInformation) {
-        log.trace(`openid refresh token flow used: ${cacheKey}`);
-        openIdInformation = await flows.refreshTokenFlow.perform(openIdInformation, context);
+
+    const tokenExchangeConfig = getOpenIdConfiguration(tokenExchangePrefix, context.variables);
+    let openIdInformation = getSessionOpenIdInformation(cacheKey, tokenExchangePrefix ? tokenExchangeConfig : config);
+    userSessionStore.removeUserSession(cacheKey);
+    if (openIdInformation) {
+      log.trace(`openid refresh token flow used: ${cacheKey}`);
+      openIdInformation = await flows.refreshTokenFlow.perform(openIdInformation, context);
+    }
+    if (!openIdInformation) {
+      log.trace(`openid flow ${flow} used: ${cacheKey}`);
+      openIdInformation = await openIdFlow.perform(config, context);
+      if (openIdInformation && tokenExchangePrefix) {
+        openIdInformation = await flows.TokenExchangeFlow.perform(tokenExchangeConfig, openIdInformation, context);
       }
-      if (!openIdInformation) {
-        log.trace(`openid flow ${flow} used: ${cacheKey}`);
-        openIdInformation = await openIdFlow.perform(config, context);
-        if (openIdInformation && tokenExchangePrefix) {
-          openIdInformation = await flows.TokenExchangeFlow.perform(tokenExchangeConfig, openIdInformation, context);
-        }
+    }
+    if (openIdInformation) {
+      log.trace(`openid flow ${flow} finished`);
+      if (utils.isProcessorContext(context)) {
+        utils.setVariableInContext({ oauth2Session: openIdInformation }, context);
       }
-      if (openIdInformation) {
-        log.trace(`openid flow ${flow} finished`);
-        if (utils.isProcessorContext(context)) {
-          utils.setVariableInContext({ oauth2Session: openIdInformation }, context);
-        }
-        userSessionStore.setUserSession(openIdInformation);
-        keepAlive(cacheKey, context.variables);
-        return openIdInformation;
-      }
+      userSessionStore.setUserSession(openIdInformation);
+      keepAlive(cacheKey, context.variables);
+      return openIdInformation;
     }
   }
   return undefined;

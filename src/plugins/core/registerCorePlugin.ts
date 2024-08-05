@@ -26,6 +26,7 @@ function initOnRequestHook(api: models.HttpyacHooksApi) {
   api.hooks.onRequest.addHook('attachDefaultHeaders', request.attachDefaultHeaders);
   api.hooks.onRequest.addHook('setEnvRequestOptions', request.setEnvRequestOptions);
   api.hooks.onRequest.addHook('resolveRequestBody', request.resolveRequestBody);
+  api.hooks.onRequest.addHook('setDefaultHttpyacHeaders', request.setDefaultHttpyacHeaders);
   api.hooks.onRequest.addHook('requestVariableReplacer', request.requestVariableReplacer);
   api.hooks.onRequest.addHook('transformRequestBody', request.transformRequestBodyToBuffer);
   api.hooks.onRequest.addHook('transfromMultilineFormUrlEncoded', request.transfromMultilineFormUrlEncoded);
@@ -76,6 +77,7 @@ function initParseMetData(api: models.HttpyacHooksApi) {
   api.hooks.parseMetaData.addHook('loop', metaData.loopMetaDataHandler);
   api.hooks.parseMetaData.addHook('noRedirect', metaData.noRedirectMetaDataHandler);
   api.hooks.parseMetaData.addHook('noRejectUnauthorized', metaData.noRejectUnauthorizedMetaDataHandler);
+  api.hooks.parseMetaData.addHook('timeout', metaData.timeoutMetaDataHandler);
   api.hooks.parseMetaData.addHook('note', metaData.noteMetaDataHandler);
   api.hooks.parseMetaData.addHook('proxy', metaData.proxyMetaDataHandler);
   api.hooks.parseMetaData.addHook('rateLimit', metaData.rateLimitMetaDataHandler);
